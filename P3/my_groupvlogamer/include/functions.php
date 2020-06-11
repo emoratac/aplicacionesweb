@@ -95,13 +95,16 @@ function MP_my_datos_vlogamer()
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
-            print($_REQUEST['foto']);
+
             $query = "INSERT INTO $table (nombre, email,clienteMail, foto_file) VALUES (?,?,?,?)";         
             $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'], $_REQUEST['foto'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
 
+            echo $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+            echo "---";
+            echo $_FILES['foto']['tmp_name'];
             $fotoURL="";
             $IMAGENES_USUARIOS = '../fotos/';
             if(array_key_exists('foto', $_FILES) && $_POST['email']) {
@@ -109,6 +112,7 @@ function MP_my_datos_vlogamer()
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
                     { echo "foto subida con éxito";
             }}
+            
 
             if (1>$a) {echo "InCorrecto $query";}
             else wp_redirect(admin_url( 'admin-post.php?action=my_datos_vlogamer&proceso=listar'));
