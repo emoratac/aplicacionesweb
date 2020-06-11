@@ -89,16 +89,6 @@ function MP_my_datos_vlogamer()
         case "registro":
             $MP_user=null; //variable a rellenar cuando usamos modificar con este formulario
             MP_Register_Form_vlogamer($MP_user,$user_email);
-
-            $fotoURL="";
-            $IMAGENES_USUARIOS = '../fotos/';
-            if(array_key_exists('foto', $_FILES) && $_POST['email']) {
-                $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
-                if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
-                    { echo "foto subida con éxito";
-            }}
-
-
             break;
         case "registrar":
             if (count($_REQUEST) < 3) {
@@ -122,7 +112,13 @@ function MP_my_datos_vlogamer()
                 $a=array( $user_email);
             } 
 
-
+            $fotoURL="";
+            $IMAGENES_USUARIOS = '../fotos/';
+            if(array_key_exists('foto', $_FILES) && $_POST['email']) {
+                $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+                if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+                    { echo "foto subida con éxito";
+            }}
 
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
