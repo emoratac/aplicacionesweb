@@ -98,7 +98,7 @@ function MP_my_datos_vlogamer()
             }
 
             $query = "INSERT INTO $table (nombre, email,clienteMail, foto_file) VALUES (?,?,?,?)";         
-            $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'], $_REQUEST['foto'] );
+            $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'], $_FILES['foto']['name'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
