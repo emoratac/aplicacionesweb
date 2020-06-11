@@ -55,9 +55,9 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <br/>
 
         <label for="foto">Foto</label>
-        <img id="img_foto" src="" width="100" height="60"></p>
+        <img id="img_foto"src="" width="100" height="60"></p>
         <br/>
-        <input type="file" name="foto" size="20" maxlength="25" value="<?php print $MP_user["foto"] ?>" />
+        <input type="file" name="foto" id="foto" size="20" maxlength="25" value="<?php print $MP_user["foto"] ?>" />
         <br/>
 
         <input type="submit" value="Enviar">
