@@ -122,8 +122,7 @@ function MP_my_datos_vlogamer()
 
 
             if (1>$a) {echo "InCorrecto $query";}
-            // else wp_redirect(admin_url( 'admin-post.php?action=my_datos_vlogamer&proceso=listar'));
-            else wp_redirect(admin_url( 'admin-post' + $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'] + '-----' + $_FILES['foto']['tmp_name'] + '.php?action=my_datos_vlogamer&proceso=listar'));
+            else wp_redirect(admin_url( 'admin-post.php?action=my_datos_vlogamer&proceso=listar'));
             break;
 
         case "listar":
