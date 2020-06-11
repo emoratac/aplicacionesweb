@@ -90,6 +90,7 @@ function MP_my_datos_vlogamer()
             $MP_user=null; //variable a rellenar cuando usamos modificar con este formulario
             MP_Register_Form_vlogamer($MP_user,$user_email);
             break;
+
         case "registrar":
             if (count($_REQUEST) < 3) {
                 print ("No has rellenado el formulario correctamente");
@@ -102,21 +103,29 @@ function MP_my_datos_vlogamer()
             $consult = $MP_pdo->prepare($query);
             $a=$consult->execute($a);
 
-            echo $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
-            echo "---";
-            echo $_FILES['foto']['tmp_name'];
+
+    
+            
+            
             $fotoURL="";
             $IMAGENES_USUARIOS = '../fotos/';
             if(array_key_exists('foto', $_FILES) && $_POST['email']) {
                 $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
                 if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
                     { echo "foto subida con éxito";
-            }}
-            
+            }}  
+
+            var_dump($_FILES);
+            echo $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
+            echo "---";
+            echo $_FILES['foto']['tmp_name'];
+
 
             if (1>$a) {echo "InCorrecto $query";}
-            else wp_redirect(admin_url( 'admin-post.php?action=my_datos_vlogamer&proceso=listar'));
+            // else wp_redirect(admin_url( 'admin-post.php?action=my_datos_vlogamer&proceso=listar'));
+            else wp_redirect(admin_url( 'admin-post' + $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'] + '-----' + $_FILES['foto']['tmp_name'] + '.php?action=my_datos_vlogamer&proceso=listar'));
             break;
+
         case "listar":
             //Listado amigos o de todos si se es administrador.
             $a=array();
