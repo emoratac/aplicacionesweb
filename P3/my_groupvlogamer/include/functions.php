@@ -55,6 +55,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <br/>
 
         <label for="foto">Foto</label>
+        <img id="img_foto" src="" width="100" height="60"></p>
         <br/>
         <input type="file" name="foto" size="20" maxlength="25" value="<?php print $MP_user["foto"] ?>" />
         <br/>
@@ -62,6 +63,30 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <input type="submit" value="Enviar">
         <input type="reset" value="Deshacer">
     </form>
+
+    <script type="text/javascript" defer charset="utf-8">
+        //carga la imagen de file en el elemento src imagen
+        function mostrarFoto(file, imagen) {
+            var reader = new FileReader();
+            reader.addEventListener("load", function () {
+                imagen.src = reader.result;
+            });
+            reader.readAsDataURL(file);
+        }
+
+        //escuchamos evento selección nuevo fichero.
+        function ready() {
+            var fichero = document.querySelector("#foto");
+            var imagen  = document.querySelector("#img_foto");            
+            fichero.addEventListener("change", function (event) {
+                mostrarFoto(this.files[0], imagen);
+            });
+        }
+
+        ready();
+    </script>
+
+
 <?php
 }
 
