@@ -33,7 +33,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
 {//formulario registro amigos de $user_email
     ?>
     <h1>Gestión de Usuarios </h1>
-    <form class="fom_usuario" action="?action=my_datos_vlogamer&proceso=registrar" method="POST">
+    <form class="fom_usuario" action="?action=my_datos_vlogamer&proceso=registrar" method="POST" enctype="multipart/form-data">
         <label for="clienteMail">Tu correo</label>
         <br/>
         <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $user_email?>"
