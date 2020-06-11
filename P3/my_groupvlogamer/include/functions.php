@@ -17,6 +17,9 @@ if ( ! defined( 'WPINC' ) ) exit;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 
+define ('SITE_ROOT', realpath(dirname(__FILE__)));
+
+
 
 
 //Funcion instalación plugin. Crea tabla
@@ -111,7 +114,7 @@ function MP_my_datos_vlogamer()
             $IMAGENES_USUARIOS = '/fotos/';
             if(array_key_exists('foto', $_FILES) && $_POST['email']) {
                 $fotoURL = $IMAGENES_USUARIOS.$_POST['userName']."_".$_FILES['foto']['name'];
-                if (move_uploaded_file($_FILES['foto']['tmp_name'], $fotoURL))
+                if (move_uploaded_file($_FILES['foto']['tmp_name'], SITE_ROOT.$fotoURL))
                     { echo "foto subida con éxito";
             }}  
 
