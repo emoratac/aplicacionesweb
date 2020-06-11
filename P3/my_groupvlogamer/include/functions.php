@@ -95,6 +95,7 @@ function MP_my_datos_vlogamer()
                 print ("No has rellenado el formulario correctamente");
                 return;
             }
+            print($_REQUEST['foto']);
             $query = "INSERT INTO $table (nombre, email,clienteMail, foto_file) VALUES (?,?,?,?)";         
             $a=array($_REQUEST['userName'], $_REQUEST['email'],$_REQUEST['clienteMail'], $_REQUEST['foto'] );
             //$pdo1 = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
