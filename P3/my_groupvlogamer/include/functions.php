@@ -91,6 +91,12 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <input type="submit" value="Enviar">
         <input type="reset" value="Deshacer">
     </form>
+
+    <script type="text/javascript" src='actions.js' charset="utf-8" async defer >
+        
+    </script>
+
+        
 <?php
 }
 
