@@ -65,12 +65,12 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
     </form> -->
 
     <form class="fom_usuario" id=myFormAsync action="?action=my_datos_vlogamer&proceso=registrar" method="POST" enctype="multipart/form-data">
-        <label for="clienteMail">Tu correo0o0o0o0o0o0o0o0</label>
+        <label for="clienteMail">Tu correo0o0o0o0o0o0o0os</label>
         <br/>
         <input type="text" name="clienteMail"  size="20" maxlength="25" value="<?php print $user_email?>"
         readonly />
         <br/>
-        <legend>Datos básicos</legend>
+        <legend>Datos básicos33333</legend>
         <label for="nombre">Nombre</label>
         <br/>
         <input type="text" name="userName" class="item_requerid" size="20" maxlength="25" value="<?php print $MP_user["userName"] ?>"
