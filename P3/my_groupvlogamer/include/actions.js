@@ -31,7 +31,11 @@ async function registrarAsync(evento) {
       throw Error(response.statusText);
     }
     const result = await response.text();
+
     alert("El registro se ha guardado correctamente.");
+
+    window.location.href =
+      window.location.href + "?action=my_datos_vlogamer&proceso=listar";
 
     // var r = confirm("¿Quieres registrar más usuarios?");
     // if (r == true) {
