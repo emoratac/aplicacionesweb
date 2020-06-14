@@ -34,8 +34,8 @@ async function registrarAsync(evento) {
 
     alert("El registro se ha guardado correctamente.");
 
-    window.location.href =
-      window.location.href + "?action=my_datos_vlogamer&proceso=listar";
+    // window.location.href =
+    //   window.location.href + "?action=my_datos_vlogamer&proceso=listar";
 
     // var r = confirm("¿Quieres registrar más usuarios?");
     // if (r == true) {
