@@ -92,8 +92,9 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <input type="reset" value="Deshacer">
     </form>
 
-
     <script type="text/javascript" defer charset="utf-8">
+        console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+
         //carga la imagen de file en el elemento src imagen
         function mostrarFoto(file, imagen) {
             var reader = new FileReader();
@@ -146,8 +147,8 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
             var myForm = document.querySelector("#myFormAsync");
             myForm.addEventListener("submit", function(event){
                 console.log('aded submit event');
-                registrarAsync(event):
-            })
+                registrarAsync(event);
+            });
 
             // if (document.forms.length > 0) {
             // document.forms[0].addEventListener("submit", function (event) {
