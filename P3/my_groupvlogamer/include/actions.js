@@ -31,7 +31,15 @@ async function registrarAsync(evento) {
       throw Error(response.statusText);
     }
     const result = await response.text();
-    alert("El registro se ha guardado correctamente.");
+    // alert("El registro se ha guardado correctamente.");
+
+    var r = confirm("Press a button!");
+    if (r == true) {
+      txt = "You pressed OK!";
+    } else {
+      txt = "You pressed Cancel!";
+    }
+
     console.log("Correcto devuelvo:", result);
   } catch (error) {
     console.log(error);
