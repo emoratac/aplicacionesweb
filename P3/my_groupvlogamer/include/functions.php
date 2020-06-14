@@ -147,7 +147,7 @@ function MP_my_datos_vlogamer()
 { 
     global $user_ID , $user_email,$table;
 
-    wp_register_script('myScript', './actions.js' );
+    // wp_register_script('myScript', './actions.js' );
     
     $MP_pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
     wp_get_current_user();
