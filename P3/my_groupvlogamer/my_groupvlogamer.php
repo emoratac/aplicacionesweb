@@ -36,10 +36,7 @@ function MP_Ejecutar_crearT_vlogamer(){
 //add_action('admin_post_nopriv_my_datos', 'MP_my_datos'); //no autentificados
 add_action('admin_post_my_datos_vlogamer', "MP_my_datos_vlogamer"); 
 
-function ejecutarAccionScript() {
-    wp_enqueue_script( 'myScript', './include/actions.js', false );
-}
-add_action( 'wp_enqueue_scripts', 'ejecutarAccionScript' );
+
 ?>
 
 

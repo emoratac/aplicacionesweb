@@ -93,7 +93,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
     </form>
 
     <script type="text/javascript" src='actions.js' charset="utf-8" async defer >
-        
+        wp_enqueue_script('myScript');
     </script>
 
         
@@ -108,6 +108,8 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
 function MP_my_datos_vlogamer()
 { 
     global $user_ID , $user_email,$table;
+
+    wp_register_script('myScript', './actions.js' );
     
     $MP_pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD); 
     wp_get_current_user();
