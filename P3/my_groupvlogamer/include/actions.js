@@ -33,11 +33,13 @@ async function registrarAsync(evento) {
     const result = await response.text();
     // alert("El registro se ha guardado correctamente.");
 
-    var r = confirm("Press a button!");
+    var r = confirm("¿Quieres registrar más usuarios?");
     if (r == true) {
-      txt = "You pressed OK!";
+      window.location.href =
+        window.location.href + "?action=my_datos_vlogamer&proceso=registro";
     } else {
-      txt = "You pressed Cancel!";
+      window.location.href =
+        window.location.href + "?action=my_datos_vlogamer&proceso=listar";
     }
 
     console.log("Correcto devuelvo:", result);
