@@ -105,29 +105,30 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
 
         // envia formulario
         async function registrarAsync(evento) {
-        try {
-            evento.preventDefault();
-            console.log('registrarAsync 1');
-            let url = evento.target.getAttribute("action")
-            let data = new FormData(evento.target);
-            let init = {
-                url: url,
-                method: 'post',
-                body: data
-            };
-            console.log('registrarAsync 2', url, data);
+            try {
+                evento.preventDefault();
+                console.log('registrarAsync 1');
+                let url = evento.target.getAttribute("action")
+                let data = new FormData(evento.target);
+                let init = {
+                    url: url,
+                    method: 'post',
+                    body: data
+                };
+                console.log('registrarAsync 2', url, data);
 
-            let request0 = new Request(url, init);
+                let request0 = new Request(url, init);
 
-            const response = await fetch(request0);
+                const response = await fetch(request0);
 
-            if (!response.ok) {
-                throw Error(response.statusText);
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                const result = await response.text();
+                console.log('Correcto devuelvo:', result);
+            } catch (error) {
+                console.log(error);
             }
-            const result = await response.text();
-            console.log('Correcto devuelvo:', result);
-        } catch (error) {
-            console.log(error);
         }
 
 
