@@ -65,7 +65,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         <input type="reset" value="Deshacer">
     </form>
 
-    <script type="text/javascript" src='actions.js' charset="utf-8" async defer >
+    <script type="text/javascript" charset="utf-8" defer >
         // wp_enqueue_script('myScript');
 
         console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
