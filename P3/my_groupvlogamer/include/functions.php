@@ -107,6 +107,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
         async function registrarAsync(evento) {
         try {
             evento.preventDefault();
+            console.log('registrarAsync 1');
             let url = evento.target.getAttribute("action")
             let data = new FormData(evento.target);
             let init = {
@@ -114,6 +115,8 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
                 method: 'post',
                 body: data
             };
+            console.log('registrarAsync 2', url, data);
+            
             let request0 = new Request(url, init);
 
             const response = await fetch(request0);
@@ -137,8 +140,10 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
                 mostrarFoto(this.files[0], imagen);
             });   
 
+            
             var myForm = document.querySelector("#myFormAsync");
             myForm.addEventListener("submit", function(event){
+                console.log('aded submit event');
                 registrarAsync(event):
             })
 
