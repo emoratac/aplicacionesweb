@@ -101,7 +101,7 @@ async function registrarAsync(evento) {
       throw Error(response.statusText);
     }
     const result = await response.text();
-
+ 
     // alert("El registro se ha guardado correctamente.");
 
     // window.location.href =
