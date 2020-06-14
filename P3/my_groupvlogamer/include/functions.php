@@ -116,7 +116,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
                 body: data
             };
             console.log('registrarAsync 2', url, data);
-            
+
             let request0 = new Request(url, init);
 
             const response = await fetch(request0);
@@ -134,6 +134,7 @@ function MP_Register_Form_vlogamer($MP_user , $user_email)
 
         //escuchamos evento selección nuevo fichero.
         function ready() {
+            console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
             var fichero = document.querySelector("#foto");
             var imagen  = document.querySelector("#img_foto");            
             fichero.addEventListener("change", function (event) {
