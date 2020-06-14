@@ -33,14 +33,14 @@ async function registrarAsync(evento) {
     const result = await response.text();
     alert("El registro se ha guardado correctamente.");
 
-    var r = confirm("¿Quieres registrar más usuarios?");
-    if (r == true) {
-      window.location.href =
-        window.location.href + "?action=my_datos_vlogamer&proceso=registro";
-    } else {
-      window.location.href =
-        window.location.href + "?action=my_datos_vlogamer&proceso=listar";
-    }
+    // var r = confirm("¿Quieres registrar más usuarios?");
+    // if (r == true) {
+    //   window.location.href =
+    //     window.location.href + "?action=my_datos_vlogamer&proceso=registro";
+    // } else {
+    //   window.location.href =
+    //     window.location.href + "?action=my_datos_vlogamer&proceso=listar";
+    // }
 
     console.log("Correcto devuelvo:", result);
   } catch (error) {
